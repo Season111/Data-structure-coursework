@@ -3,7 +3,7 @@
 
 ## 哈夫曼编码问题
 
-**问题描述：**打开一篇英文文章，统计该文章中每个字符出现的次数，然后以它们作为权值，对每一个字符进行编码，编码完成后再对其编码进行译码。
+**问题描述:**打开一篇英文文章，统计该文章中每个字符出现的次数，然后以它们作为权值，对每一个字符进行编码，编码完成后再对其编码进行译码。
 
    利用哈夫曼编码进行信息通信可以大大提高信道利用率，缩短信息传输时间，降低传输成本。但是，这要求在发送端通过一个编码系统对待传数据预先编码，在接收端将传来的数据进行译码（复原）。对于双工信道（即可以双向传输信息的信道），每端都需要一个完整的编译码系统。试为这样的信息收发站写一个哈夫曼编译码系统。
 一个完整的系统应具有以下功能：
@@ -697,7 +697,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/1.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/1.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -717,7 +717,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/2.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/2.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -741,7 +741,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/3.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/3.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -762,7 +762,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/4.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/4.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -780,7 +780,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/5.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/5.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -806,7 +806,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/6.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/6.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -820,7 +820,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/7.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/7.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -832,7 +832,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/8.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/8.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -845,7 +845,7 @@ def breakConnection(self):
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
-    src="./img_2/9.png">
+    src="./320190903781_周功海数据结构大作业/关键图片/9.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
