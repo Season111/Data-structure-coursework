@@ -1,4 +1,3 @@
-# Data-structure-Huffman-coding
 # 大作业算法设计
 
 ## 哈夫曼编码问题
