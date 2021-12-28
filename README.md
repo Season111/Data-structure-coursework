@@ -2,30 +2,30 @@
 
 ## 哈夫曼编码问题
 
-问题描述:打开一篇英文文章，统计该文章中每个字符出现的次数，然后以它们作为权值，对每一个字符进行编码，编码完成后再对其编码进行译码。
+Problem description: Open an English article, count the number of occurrences of each character in the article, and then use them as weights to encode each character, and then decode the encoding after the encoding is completed.
 
-   利用哈夫曼编码进行信息通信可以大大提高信道利用率，缩短信息传输时间，降低传输成本。但是，这要求在发送端通过一个编码系统对待传数据预先编码，在接收端将传来的数据进行译码（复原）。对于双工信道（即可以双向传输信息的信道），每端都需要一个完整的编译码系统。试为这样的信息收发站写一个哈夫曼编译码系统。
-一个完整的系统应具有以下功能：
+   The use of Huffman coding for information communication can greatly improve channel utilization, shorten information transmission time, and reduce transmission costs. However, this requires pre-encoding the data to be transmitted through an encoding system at the transmitting end, and decoding (recovering) the transmitted data at the receiving end. For duplex channels (that is, channels that can transmit information in both directions), a complete encoding and decoding system is required at each end. Try to write a Huffman coding and decoding system for such a messaging station.
+A complete system should have the following functions:
 
-（1） I ：初始化 (Initialization )。从终端读入字符集大小 n ，以及 n 个字符和 n 个权值，建立哈夫曼树，并将它存于文件 hfmTree 中。
+(1) I: Initialization (Initialization). Read the character set size n, n characters and n weights from the terminal, build a Huffman tree, and store it in the file hfmTree.
 
-（2） E ：编码 (Encoding )。利用已建好的哈夫曼树（如不在内存，则从文件 htmTree 中读入），对文件 ToBeTran 中的正文进行编码，然后将结果存入文件 CodeFile 中。
+(2) E: Encoding. Use the built Huffman tree (if not in memory, read it from the file htmTree), encode the text in the file ToBeTran, and then save the result in the file CodeFile.
 
-（3）D ：译码( Decoding )。利用已建好的哈夫曼树将文件 CodeFile 中的代码进行译码，结果存入文件 TextFile 中。
+(3) D: Decoding. Use the built Huffman tree to decode the code in the file CodeFile, and store the result in the file TextFile.
 
-（4）P ：印代码文件( Print )。将文件 CodeFile 以紧凑格式显示在终端上，每行 50 个代码。同时将此字符形式的编码写入文件 CodePrint 中。
+(4) P: Print code file (Print). Display the file CodeFile on the terminal in a compact format, with 50 codes per line. At the same time, write the code of this character form into the file CodePrint.
 
-（5） T ：印哈夫曼树 (TreePrinting )。将已在内存中的哈夫曼树以直观的方式（树或凹入表形式）显示在终端上，同时将此字符形式的哈夫曼树写入文件 TreePrint 中。
+(5) T: Print Huffman tree (TreePrinting). Display the Huffman tree in the memory in an intuitive way (in the form of a tree or recessed table) on the terminal, and write the Huffman tree in the form of characters into the file TreePrint at the same time.
 
-**涉及知识点**： 哈夫曼树
+**Involving knowledge points**: Huffman tree
 
 ## 问题解答
 
-本题目大多数都是由C/C++实现的，而本人在自学python后发现用python处理本题目中的部分问题更为简易方便，因而本文多用python实现算法：
+Most of this topic is implemented by C/C++, and after self-learning python, I found that it is easier and more convenient to use python to deal with some of the problems in this topic, so this article uses python to implement the algorithm:
 
 ### 初始化（Initialization）
 
-初始化有两种形式一种是直接根据原文生成，另一种是根据通过直接导入字符，而在这两种方法的基础上，还可对列表内的字符集进行增删改查，而对于现存的字符集还可进行保存文件这一操作，最终，在关闭该窗口时，程序会根据现有的字符集来进行建树。
+There are two forms of initialization. One is to generate directly based on the original text, and the other is to directly import characters. On the basis of these two methods, the character set in the list can also be added, deleted, and modified. The character set can also be used to save the file. Finally, when the window is closed, the program will build a tree based on the existing character set.
 
 #### 根据原文生成
 
@@ -197,7 +197,7 @@ def add(self):
 
 ### 编码（Encoding）
 
-编码则是根据内存中现有的树来对原文进行编码，而原文的读取方式有两种，一种是手动输入，一种是读取文件，而原文也可进行保存。
+Encoding is to encode the original text according to the existing tree in the memory, and there are two ways to read the original text, one is manual input, the other is to read the file, and the original text can also be saved.
 
 #### 编码
 
@@ -261,7 +261,7 @@ def saveRawTextContent(self):
 
 ### 译码（Decoding）
 
-译码则是根据内存中现有的树来对密文进行译码，而密文的读取方式有两种，一种是手动输入，一种是读取文件，而密文也可进行保存
+Decoding is to decode the ciphertext according to the existing tree in the memory, and there are two ways to read the ciphertext, one is manual input, the other is to read the file, and the ciphertext can also be saved
 
 #### 译码（Decoding）
 
@@ -329,7 +329,7 @@ def decoding(self):
 
 ### 打印代码文件（Print）
 
-此处我们要实现以紧凑格式输出，且要存储文件
+Here we want to realize the output in a compact format, and to store the file
 
 #### 紧凑格式
 
@@ -362,7 +362,7 @@ def saveEncodedTextContent(self):
 
 ### 打印哈夫曼树（Tree printing）
 
-打印哈夫曼树中，包括生成树的信息、对控件中的图像进行操作、树信息的显示以及树的导入以及存储，还有查看字符集的相关操作
+Print the Huffman tree, including the information of the spanning tree, the operation of the image in the control, the display of the tree information, the import and storage of the tree, and the related operations of viewing the character set
 
 #### 生成树的图片
 
@@ -521,7 +521,7 @@ def savetree(self):
 
 ### 网络通信（Network）
 
-网络通信包括服务端监听接口以及等待连接、客户端建立连接、树和密文的传输、等待接收以及断开连接
+Network communication includes server monitoring interface and waiting for connection, client establishing connection, transmission of tree and ciphertext, waiting for reception and disconnection
 
 #### 服务端监听端口
 
@@ -683,15 +683,15 @@ def breakConnection(self):
 ```
 ## 项目成果功能展示：
 
-​     本章主要对本软件的设计细节和实测性能进行详细的介绍，能够让读者更为深入地理解 每个步骤的意义以及实现原理。
+​     This chapter mainly introduces the design details and measured performance of the software in detail, so that readers can have a deeper understanding of the meaning of each step and the principle of implementation.
 
 ### 初始化（Initialization）
 
-初始化有两种形式一种是直接根据文本框输入生成，另一种是根据通过直接导入字符，而在这两种方法的基础上，还可对列表内的字符集进行增删改查，而对于现存的字符集还可进行保存文件这一操作，最终，在关闭该窗口时，程序会根据现有的字符集来进行建树。
+There are two forms of initialization: one is to generate directly according to the text box input, and the other is to directly import characters. On the basis of these two methods, the character set in the list can be added, deleted, and modified. The existing character set can also be used to save the file. Eventually, when the window is closed, the program will build a tree based on the existing character set.
 
 #### 文本输入
 
-文本的输入主要有两种途径，一种是直接根据文本框输入生成，另一种是根据通过直接导入字符。这两种输入途径没有十分明显的区别，直接导入文本的时候最终文本还是会直接显示在文本框界面中。如图二、文本初始化所示：
+There are two main ways to input text, one is to generate it directly according to the text box input, and the other is to import characters directly. There is no obvious difference between the two input methods. When directly importing text, the final text will still be directly displayed in the text box interface. As shown in Figure 2, text initialization:
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -707,11 +707,11 @@ def breakConnection(self):
 
 #### 额外的增删改查
 
-在将文本输入或导入“原文：”的文本框后，还提供有随时修改文本功能。即可以在编码之前我们可以随时调整文本框内的内容，保证我们发送内容的准确性。
+After inputting or importing text into the text box of "Original:", the function of modifying the text at any time is also provided. That is, we can adjust the content in the text box at any time before encoding to ensure the accuracy of the content we send.
 
 #### 构建二叉树
 
-在输入文本后点击编辑字频之后会弹出如图三的UI框，本程序提供自动生成字频功能、字频导入以及字频保存功能，依然提供两种方式实现字频的输入以方便用户的日常使用，使用户使用效率最大化。
+After inputting the text, click to edit the word frequency, and the UI box as shown in Figure 3 will pop up. This program provides automatic word frequency generation, word frequency import and word frequency saving functions. It still provides two ways to input word frequency for the convenience of users. Daily use, maximize user efficiency.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -729,13 +729,13 @@ def breakConnection(self):
 
 #### 保存字频
 
-如上图三所示，如果文本内容较多，为了避免每次都需要自动生成字符集，这样可能会花费较多的时间，我们提供了字频保存的功能，方便提高效率。我们可以在不同环境、不同电脑上直接对保存字频生成的二叉树进行操作。
+As shown in Figure 3 above, if the text content is large, in order to avoid the need to automatically generate the character set every time, which may take more time, we provide the function of saving the word frequency to facilitate the improvement of efficiency. We can directly operate the binary tree generated by saving the word frequency in different environments and different computers.
 
 ### 编码（Encoding）
 
 #### 编码
 
-如图四、编码过程所示，点击编码后会将之前的字频所确定的各个字的节点生成一棵哈夫曼树（Huffmantree），之后将生成的哈夫曼树依次遍历编码即可完成对所输入内容的哈夫曼编码，生成密文。
+As shown in Figure 4, the encoding process, clicking the encoding will generate a Huffman tree (Huffmantree) for the nodes of each word determined by the previous word frequency, and then traverse the generated Huffman tree in turn to complete the encoding. Huffman coding the input content to generate ciphertext.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -750,13 +750,13 @@ def breakConnection(self):
 
 #### 保存原文
 
-此处提供保存密文的功能，方便之后数据传输及记录。
+The function of saving ciphertext is provided here to facilitate data transmission and recording later.
 
 ### 译码（Decoding）
 
 #### 密文导入
 
-如下图五、密文导入所示，我们在接收到别人通过网络传输发送的哈夫曼密文时，可以将密文复制进文本框中，或者选择直接导入密文
+As shown in Figure 5, ciphertext import, when we receive the Huffman ciphertext sent by others via network transmission, we can copy the ciphertext into the text box, or choose to import the ciphertext directly
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -772,9 +772,9 @@ def breakConnection(self):
 
 ####  译码
 
-点击译码时，循环读入一串哈夫曼序列，读到“0”从根结点的左孩子继续读，读到“1”从右孩子继续，如果读到一个结点的左孩子和右孩子是否都为0，如果是说明已经读到了一个叶子（字符），翻译一个字符成功，把该叶子结点代表的字符存在一个存储翻译字符的数组中，然后继续从根结点开始读，直到读完这串哈夫曼序列，遇到结束符便退出循环。
+When you click Decode, read a series of Huffman sequences in a loop, read "0" from the left child of the root node to continue reading, read "1" to continue from the right child, if you read the left child of a node and Whether the right child is all 0, if it means that a leaf (character) has been read, the translation of a character is successful, the character represented by the leaf node is stored in an array that stores the translated characters, and then continue to read from the root node, Until the Huffman sequence is read, the loop will exit when the terminator is encountered.
 
-之后将生成的字符打印在“原文：”文本框里。实现将文本译码的功能。
+Then print the generated characters in the "Original:" text box. Realize the function of text decoding.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -790,17 +790,17 @@ def breakConnection(self):
 
 #### 文件读入和保存
 
-可以将译码的文字内容通过“文件保存”存储到本地。
+The decoded text content can be stored locally through "File Save".
 
 ### 打印哈夫曼树
 
 ####  生成树的图片及存储
 
-点击操作树，会生成如图所示的文本图片（其展示的树的图像不完全），可以“保存”和“载入”按钮进行树的存储或者导入功能。此树具备放大缩小展示的特性（缩小后不方便看清楚树的细节），在其界面角落还保留有对树的信息进行统计展示的功能。其内容主要包括树的高度，节点数以及叶子数等，本文案例中展示的“树的高度为8，树的节点数为213，树的叶子数为107”
+Clicking on the operation tree will generate a text image as shown in the figure (the image of the tree displayed is not complete), and you can use the "Save" and "Load" buttons to store or import the tree. This tree has the feature of zooming in and zooming out (it is not convenient to see the details of the tree clearly after zooming out), and it also retains the function of statistically displaying the tree information in the corner of its interface. The content mainly includes the height of the tree, the number of nodes and the number of leaves, etc. In the case of this article, "the height of the tree is 8, the number of nodes of the tree is 213, and the number of leaves of the tree is 107".
 
-除此以外，还提供有查找编码的功能，其主要是通过查询字符内容可以确定其字频数目，进而可以确定该字符的权重，可以反推出该字符在哈夫曼树中的位置。
+In addition, it also provides a search code function, which is mainly to determine the number of character frequencies by querying the content of the character, and then the weight of the character can be determined, and the position of the character in the Huffman tree can be deduced.
 
-如果对生成的哈夫曼树不满意，该程序还提供有对哈夫曼树中相关节点删除或者插入的功能，只要在“编辑字频”界面输入字符以及其字频（即权重），点击“插入”或“删除”按钮就可以完成对哈夫曼树的插入或删除操作。该功能对于我们需要紧急处理一些突发情况，例如在自动生成字频时发生错误，我们便可以利用此项功能对树，进而对编码实现修改。
+If you are not satisfied with the generated Huffman tree, the program also provides the function of deleting or inserting related nodes in the Huffman tree. Just enter the character and its word frequency (ie weight) in the "Edit word frequency" interface, and click "Insert" or "Delete" button can complete the insertion or deletion of the Huffman tree. This function is for us to urgently deal with some emergencies, such as an error occurred during the automatic generation of the word frequency, we can use this function to modify the tree and then the code.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -827,7 +827,7 @@ def breakConnection(self):
     padding: 2px;">图7、网络通信</div>
 </center>
 
-如图八所示，本程序提供查询本机IP地址功能，可以开放本机端口作为哈夫曼编码的传输端口，连接好客户端的IP及接收端口后可以将本机的哈夫曼树和密文一起发送到客户端上，客户端可以导入哈夫曼树后运行解码操作就可以实现将文本转化的操作。
+As shown in Figure 8, this program provides the function of querying the local IP address. The local port can be opened as the transmission port of the Huffman code. After connecting the client's IP and receiving port, the local Huffman tree and secret The text is sent to the client together, and the client can import the Huffman tree and run the decoding operation to realize the operation of converting the text.
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;" 
@@ -852,4 +852,4 @@ def breakConnection(self):
     padding: 2px;">图9、关于作者</div>
 </center> 
 
-由上图所示，在关于界面集中展示了我本人的相关信息，例如：姓名，学校，学院，学号，班级以及完成该作品的时间等。
+As shown in the figure above, the relevant information about myself is displayed in the about interface, such as: name, school, college, student ID, class, and time to complete the work, etc.
